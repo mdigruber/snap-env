@@ -13,6 +13,8 @@ def load(file=".env"):
                 if "=" in line and not line.strip().startswith("#"):
                     key, value = line.strip().split("=", 1)
                     os.environ[key] = value
+    else:
+        raise ValueError(f'File "{file}" cannot be found!')
     _loaded = True
 
 
